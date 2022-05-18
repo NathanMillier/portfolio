@@ -1,8 +1,66 @@
-* {
+@font-face {
+    font-family: 'first_jobregular';
+    src: url('webfontkit-20220517-202325/firstjob-x8rp-webfont.woff2') format('woff2'),
+         url('webfontkit-20220517-202325/firstjob-x8rp-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
     background-color: #0a1930;
     color: white;
+    margin: 0;
+    /* font-family: 'first_jobregular', Arial, sans-serif; */
 }
 
 .main-title, .home-sub-heading {
     color: #69bcb8;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: linear-gradient(black, #0a1930);
+    padding: 20px;
+    font-family: 'first_jobregular', Arial, sans-serif;
+    height: 70px;
+}
+
+.nav-left-content {
+margin: none;
+}
+
+.nav-list-links {   
+    list-style: none;
+
+}
+
+.nav-list-links li {   
+    display: inline-block;
+    padding-right: 20px;
+    font-size: 25px;
+}
+
+.nav-list-links a {
+    text-decoration: none;
+
+}
+
+.nav-list-links a, i {
+    color: #69bcb8;
+    transition: all 0.3s ease 0s;
+}
+
+.nav-list-links a:hover, i:hover {
+    color: #aee9e6;
+}
+
+.nav-right-content {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0px 20px;
+    width: 150px;
+    font-size: 30px;
 }

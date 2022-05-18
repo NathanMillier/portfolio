@@ -3,20 +3,33 @@ import { ExternalLink } from "react-external-link";
 
 function Navbar() {
   return (
-    <div>
+    <header>
       <nav>
-        <div>
-          <Link to="/">Home</Link>
-          <Link to="/Projects">My projects</Link>
-          <Link to="/Contact">Contact me</Link>
-        </div>
-        <div>
-          <ExternalLink href="https://facebook.com">
-            <i className="fab fa-facebook"></i>
-          </ExternalLink>
+        <div className="navbar">
+          <div className="nav-left-content">
+            <ul className="nav-list-links">
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/Projects">My projects</Link>
+              </li>
+              <li>
+                <Link to="/Contact">Contact me</Link>
+              </li>
+            </ul>
+          </div>
+          <div className="nav-right-content">
+            <ExternalLink href="https://github.com/NathanMillier">
+              <i className="fab fa-github-square"></i>
+            </ExternalLink>
+            <ExternalLink href="https://www.linkedin.com/in/nathan-millier/">
+              <i className="	fab fa-linkedin"></i>
+            </ExternalLink>
+          </div>
         </div>
       </nav>
-    </div>
+    </header>
   );
 }
 
