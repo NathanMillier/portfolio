@@ -1,7 +1,8 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import { ExternalLink } from "react-external-link";
 
-function Navbar() {
+const Navbar = ({ user, setUser, setToken }) => {
   return (
     <header>
       <nav>
@@ -17,6 +18,11 @@ function Navbar() {
               <li>
                 <Link to="/Contact">Contact me</Link>
               </li>
+              {user ? (
+                <li>
+                  <Link to="/Admin">Admin</Link>
+                </li>
+              ) : null}
             </ul>
           </div>
           <div className="nav-right-content">
@@ -26,11 +32,23 @@ function Navbar() {
             <ExternalLink href="https://www.linkedin.com/in/nathan-millier/">
               <i className="	fab fa-linkedin"></i>
             </ExternalLink>
+            {user ? (
+              <Link
+                to="/"
+                onClick={() => {
+                  localStorage.removeItem("token");
+                  setToken("");
+                  setUser(null);
+                }}
+              >
+                Logout
+              </Link>
+            ) : null}
           </div>
         </div>
       </nav>
     </header>
   );
-}
+};
 
 export default Navbar;

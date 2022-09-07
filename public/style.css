@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
 @font-face {
     font-family: 'first_jobregular';
     src: url('webfontkit-20220517-202325/firstjob-x8rp-webfont.woff2') format('woff2'),
@@ -7,15 +9,23 @@
 
 }
 
-body {
-    background-color: #0a1930;
-    color: white;
-    margin: 0;
-    /* font-family: 'first_jobregular', Arial, sans-serif; */
+*{
+    scroll-behavior: smooth;
 }
 
-.main-title, .home-sub-heading {
+body {
+    background-color: #0a1930;
     color: #69bcb8;
+    margin: 0;
+}
+
+#root {
+    position: relative;
+}
+
+.App {
+    position: relative;
+    min-height: 100vh;
 }
 
 .navbar {
@@ -29,7 +39,7 @@ body {
 }
 
 .nav-left-content {
-margin: none;
+    margin: none;
 }
 
 .nav-list-links {   
@@ -63,4 +73,267 @@ margin: none;
     padding: 0px 20px;
     width: 150px;
     font-size: 30px;
+}
+
+.welcome-titles {
+    width: 80%;
+    margin: auto;
+    font-size: 1.3rem;
+    font-family: 'first_jobregular', Arial, sans-serif;
+}
+
+.main-title {
+    text-align: center;
+    font-size: 2.3rem;
+}
+
+.content-container {
+    padding-top: 30px;
+    padding-bottom: 14em;
+    font-family: 'Oswald', sans-serif;
+
+}
+
+.home-sub-heading {
+    font-family: 'Oswald', sans-serif;
+    padding-left: 40px;
+}
+
+.about-me-container {
+    opacity: 0;
+    width: 80%;
+    margin:auto;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    margin-top: 100px;
+    margin-bottom: 120px;
+    transition: opacity 1s ease-in;
+
+}
+
+.about-me-container-enter-done {
+    opacity: 1;
+}
+
+.about-me-container-exit-done {
+    opacity: 0;
+}
+
+.skills {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.skill-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.bio-picture {
+    width: 300px;
+    border-radius: 50%;
+    /* flex-grow: 2; */
+}
+
+.discover-button {
+  width: 134px;
+  margin: auto;
+  margin-top: 100px;
+  display: flex;
+  /* text-align: center; */
+  /* align-items: center; */
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  /* padding: 0.7em 1.4em 0.7em 1.1em; */
+  padding: 1em;
+  color: white;
+  background: linear-gradient(0deg, #69bcb8 0%, #42a19c 100%);
+  border: none;
+  box-shadow: 0 0.7em 1.5em -0.5em #3afff5;
+  letter-spacing: 0.05em;
+  border-radius: 20em;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.discover-button:hover {
+    transition: all 400ms ease;
+    box-shadow: 0 0.5em 1.5em -0.5em #14a73e98;
+}
+
+.discover-button:active {
+  box-shadow: 0 0.3em 1em -0.5em #14a73e98;
+}
+
+.footer {
+    font-family: 'first_jobregular', Arial, sans-serif;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: linear-gradient(#0a1930, black);
+    padding-bottom: 20px;
+    height: 12em;
+}
+
+.go-up {
+    padding-left: 850px;
+}
+
+.up-arrow {
+    width: 50px;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.footer-socials {
+    font-size: 30px;
+    width: 150px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.footer-copyright {
+    font-size: 10px;
+    padding-left: 5px;
+    font-family: sans-serif;
+}
+
+.footer div {
+    margin-bottom: 10px;
+}
+
+.form-container {
+    width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    border: 5px solid #69bcb8;
+    padding: 40px 0;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.contact-form input {
+    /* margin-bottom: 30px; */
+    background-color: transparent;
+    border: none;
+    color: #69bcb8;
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+    outline: none;
+}
+
+.text-field {
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin-bottom: 40px;
+}
+
+.text-field label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: .5s;
+    color: #adadad;
+}
+
+.text-field span::before {
+    content: '';
+    position: absolute;
+    top: 42px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: #69bcb8;
+    transition: 0.7s;
+}
+
+.text-field input:focus ~ label,
+.text-field input:valid ~ label {
+    top: -2px;
+    color: #69bcb8;
+}
+
+.text-field input:focus ~ span::before,
+.text-field input:valid ~ span::before {
+    width: 100%;
+}
+
+.send-button {
+    background-color: transparent;
+    color: #69bcb8;
+    border: 3px solid #69bcb8;
+    padding: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 30%;
+    font-size: 16px;
+}
+
+.add-project-container {
+    width: 50%;
+}
+
+.update-project-container {
+    width: 50%;
+}
+
+.technology-list {
+    height: 80px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.two-forms-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.projects-container {
+    display: flex;
+    padding-bottom: 100px;
+}
+
+.project-card {
+    background-color: #0f346b;
+    width: 30%;
+    /* border: 1px solid black; */
+    margin: 0 50px;
+    text-align: center;
+    box-shadow: 2px 2px 10px black;
+    border-radius: 20px;
+    padding: 5px 20px;
+}
+
+.project-card ul {
+    text-align: left;
+}
+
+.project-card a {
+    color: white;
 }
